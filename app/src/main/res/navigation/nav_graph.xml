@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cocktailsListFragment">
+
+    <fragment
+        android:id="@+id/cocktailsListFragment"
+        android:name="com.luridevlabs.koktelo.presentation.fragment.CocktailListFragment"
+        tools:layout="@layout/fragment_cocktail_list">
+        <action
+            android:id="@+id/action_cocktailsListFragment_to_cocktailDetailFragment"
+            app:destination="@id/cocktailsDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cocktailsDetailFragment"
+        android:name="com.luridevlabs.koktelo.presentation.fragment.CocktailDetailFragment"
+        tools:layout="@layout/fragment_cocktail_detail" >
+
+        <argument
+            android:name="cocktailId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

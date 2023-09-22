@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.luridevlabs.koktelo.R
-import com.luridevlabs.koktelo.databinding.FragmentCocktailsBinding
 import com.luridevlabs.koktelo.databinding.FragmentFavoritesBinding
 
 class FavoritesFragment : Fragment() {

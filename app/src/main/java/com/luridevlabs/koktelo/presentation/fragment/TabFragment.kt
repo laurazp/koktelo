@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.luridevlabs.koktelo.R
-import com.luridevlabs.koktelo.databinding.ActivitySplashBinding
 import com.luridevlabs.koktelo.databinding.FragmentTabBinding
 import java.lang.IllegalArgumentException
 
@@ -53,7 +52,7 @@ class TabFragment : Fragment() {
         override fun createFragment(position: Int): Fragment {
             return when(position) {
                 0 -> HomeFragment()
-                1 -> CocktailsFragment()
+                1 -> CocktailListFragment()
                 2 -> FavoritesFragment()
                 else -> throw IllegalArgumentException("Invalid position")
             }
