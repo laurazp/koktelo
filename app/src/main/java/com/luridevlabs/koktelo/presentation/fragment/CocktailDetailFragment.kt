@@ -5,14 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.luridevlabs.koktelo.R
-import com.luridevlabs.koktelo.databinding.FragmentCocktailsBinding
-import com.luridevlabs.koktelo.databinding.FragmentTabBinding
+import com.luridevlabs.koktelo.databinding.FragmentCocktailDetailBinding
 
-class CocktailsFragment : Fragment() {
+class CocktailDetailFragment : Fragment() {
 
-    private val binding: FragmentCocktailsBinding by lazy {
-        FragmentCocktailsBinding.inflate(layoutInflater)
+    private val binding: FragmentCocktailDetailBinding by lazy {
+        FragmentCocktailDetailBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -21,5 +19,4 @@ class CocktailsFragment : Fragment() {
     ): View? {
         return binding.root
     }
-
 }
