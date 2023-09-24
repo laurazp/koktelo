@@ -4,7 +4,7 @@ import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
 data class DrinksResponse (
-    val drinks: List<Drink>
+    @SerializedName("drinks")val drinks: List<Drink>
 )
 
 @Keep
