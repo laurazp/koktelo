@@ -10,12 +10,12 @@
         android:id="@+id/tl_cocktail_tabs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/melon"
+        android:background="@color/advent_purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:tabIndicatorColor="@color/white"
-        app:tabTextColor="@color/black" />
+        app:tabTextColor="@color/white" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2_cocktail_viewpager"
