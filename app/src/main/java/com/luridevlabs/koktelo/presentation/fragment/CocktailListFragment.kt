@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.luridevlabs.koktelo.R
 import com.luridevlabs.koktelo.databinding.FragmentCocktailListBinding
 import com.luridevlabs.koktelo.model.ResourceState
 import com.luridevlabs.koktelo.presentation.adapter.CocktailListAdapter
+import com.luridevlabs.koktelo.presentation.viewmodel.CocktailDetailState
 import com.luridevlabs.koktelo.presentation.viewmodel.CocktailListState
 import com.luridevlabs.koktelo.presentation.viewmodel.CocktailsViewModel
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
@@ -71,7 +74,7 @@ class CocktailListFragment : Fragment() {
         cocktailListAdapter.onClickListener = { cocktail ->
 
             findNavController().navigate(
-                CocktailListFragmentDirections.actionCocktailsListFragmentToCocktailDetailFragment(cocktail.drinkId)
+                CocktailListFragmentDirections.actionCocktailListFragmentToCocktailDetailFragment(cocktail.drinkId)
             )
         }
     }

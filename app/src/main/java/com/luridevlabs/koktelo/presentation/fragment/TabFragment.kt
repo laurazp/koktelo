@@ -57,6 +57,5 @@ class TabFragment : Fragment() {
                 else -> throw IllegalArgumentException("Invalid position")
             }
         }
-
     }
 }

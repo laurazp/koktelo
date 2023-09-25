@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.fcv_main_container, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.fcv_main_container, fragment).addToBackStack(null).commit()
     }
 
 }

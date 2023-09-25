@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/cocktailsListFragment">
+    app:startDestination="@id/cocktailListFragment">
 
     <fragment
-        android:id="@+id/cocktailsListFragment"
+        android:id="@+id/cocktailListFragment"
         android:name="com.luridevlabs.koktelo.presentation.fragment.CocktailListFragment"
         tools:layout="@layout/fragment_cocktail_list">
         <action
-            android:id="@+id/action_cocktailsListFragment_to_cocktailDetailFragment"
-            app:destination="@id/cocktailsDetailFragment" />
+            android:id="@+id/action_cocktailListFragment_to_cocktailDetailFragment"
+            app:destination="@id/cocktailDetailFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/cocktailsDetailFragment"
+        android:id="@+id/cocktailDetailFragment"
         android:name="com.luridevlabs.koktelo.presentation.fragment.CocktailDetailFragment"
         tools:layout="@layout/fragment_cocktail_detail" >
 
