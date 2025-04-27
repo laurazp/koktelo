@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.luridevlabs.koktelo.R
 import com.luridevlabs.koktelo.databinding.FragmentCocktailDetailBinding
 import com.luridevlabs.koktelo.model.Drink
 import com.luridevlabs.koktelo.model.ResourceState
@@ -24,6 +25,8 @@ class CocktailDetailFragment : Fragment() {
     private val args: CocktailDetailFragmentArgs by navArgs()
 
     private val cocktailsViewModel: CocktailsViewModel by activityViewModel()
+
+    private var cocktail: Drink? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,6 +72,23 @@ class CocktailDetailFragment : Fragment() {
         Glide.with(requireContext())
             .load(cocktail.drinkImageUrl)
             .into(binding.ivCocktailImage)
+
+        binding.ibCocktailDetailFavorite.setOnClickListener {
+            toggleFavoriteCocktail()
+        }
+    }
+
+    private fun toggleFavoriteCocktail() {
+        val isFavorite = cocktail?.isFavorite ?: false
+        cocktail?.isFavorite = !isFavorite
+
+        binding.ibCocktailDetailFavorite.setImageResource(
+            if (cocktail?.isFavorite == true) {
+                R.drawable.baseline_favorite_24
+            } else {
+                R.drawable.baseline_favorite_border_24
+            }
+        )
     }
 
     private fun showErrorDialog(error: String) {

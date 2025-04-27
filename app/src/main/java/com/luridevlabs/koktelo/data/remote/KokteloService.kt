@@ -10,6 +10,6 @@ interface KokteloService {
     @GET("filter.php?c=Cocktail")
     suspend fun getCocktails(): DrinksResponse
 
-    @GET("lookup.php?i=drinkId")
+    @GET("lookup.php?i={drinkId}")
     suspend fun getCocktail(@Path("drinkId") drinkId: String): Drink
 }

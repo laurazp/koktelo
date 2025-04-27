@@ -1,5 +1,6 @@
 package com.luridevlabs.koktelo.presentation.fragment
 
+import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -72,8 +73,8 @@ class CocktailListFragment : Fragment() {
         binding.rvCocktailList.layoutManager = LinearLayoutManager(requireContext())
 
         cocktailListAdapter.onClickListener = { cocktail ->
-
-            findNavController().navigate(
+            //TODO: mirar error
+            findNavController().navigate( //R.id.action_cocktailListFragment_to_cocktailDetailFragment
                 CocktailListFragmentDirections.actionCocktailListFragmentToCocktailDetailFragment(cocktail.drinkId)
             )
         }

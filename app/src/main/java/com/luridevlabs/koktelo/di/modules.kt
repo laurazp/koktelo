@@ -16,7 +16,7 @@ val baseModule = module {
     single<KokteloService> { ApiClient.retrofit.create(KokteloService::class.java) }
 }
 
-val charactersModule = module {
+val cocktailsModule = module {
     factory { CocktailsRemoteImpl(get()) }
     //factory { CocktailsLocalImpl(get()) }
     factory<CocktailsRepository> { CocktailsDataImpl(get()) }

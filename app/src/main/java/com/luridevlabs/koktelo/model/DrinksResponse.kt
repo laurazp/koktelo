@@ -11,5 +11,6 @@ data class DrinksResponse (
 data class Drink (
     @SerializedName("strDrink") val drinkName: String,
     @SerializedName("strDrinkThumb") val drinkImageUrl: String,
-    @SerializedName("idDrink") val drinkId: String
+    @SerializedName("idDrink") val drinkId: String,
+    var isFavorite: Boolean = false
 )

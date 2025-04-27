@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragment.CocktailListFragment">
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph"
+    tools:context=".presentation.fragment.CocktailDetailFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -24,20 +27,38 @@
                 android:scaleType="centerCrop"
                 android:background="@color/black"/>
 
-            <TextView
-                android:id="@+id/tv_cocktail_detail_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/iv_cocktail_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginVertical="16dp"
-                android:layout_marginHorizontal="16dp"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:text="Mojito"
-                android:maxLines="2"
-                android:ellipsize="end" />
+                android:layout_marginHorizontal="16dp" >
+
+                <TextView
+                    android:id="@+id/tv_cocktail_detail_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    tools:text="Mojito"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_weight="20"/>
+
+                <ImageButton
+                    android:id="@+id/ib_cocktail_detail_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_favorite_border_24"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
